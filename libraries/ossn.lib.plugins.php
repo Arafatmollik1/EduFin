@@ -64,12 +64,12 @@ function ossn_register_plugins_by_path($path) {
  * @param array|object  $vars A valid arrays or object
  * @return void|mixed
  */
-function ossn_plugin_view($plugin = '', $vars = array(), $type = 'default') {
+function ossn_plugin_view($plugin = '', $vars = array(), $type = 'default') { //$plugin = 'menus/{$menu}', $vars =2arrays(menu=> 5 arrays, menuname=> footer)
 		global $Ossn;
 		$args        = array(
 				'plugin' => $plugin
 		);
-		$plugin_type = ossn_call_hook('plugin', 'view:type', $args, $type);
+		$plugin_type = ossn_call_hook('plugin', 'view:type', $args, $type); // $args= array(plugin[menu/{$menu}]) , $type= 'default' ********retuns?*********
 		if(isset($Ossn->plugins[$plugin_type][$plugin])) {
 				$extended_views = ossn_fetch_extend_views($plugin, $vars);
 				return ossn_view($Ossn->plugins[$plugin_type][$plugin] . $plugin, $vars) . $extended_views;

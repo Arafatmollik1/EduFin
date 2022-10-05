@@ -204,7 +204,7 @@ function ossn_is_hook($hook, $type) {
  *
  * @return mix data
  */
-function ossn_call_hook($hook, $type, $params = null, $returnvalue = null) {
+function ossn_call_hook($hook, $type, $params = null, $returnvalue = null) { //$hook = 'plugin', $type ='view:type'
 	global $Ossn;
 	$hooks = array();
 	if (isset($Ossn->hooks[$hook][$type])) {

@@ -79,7 +79,7 @@ function ossn_unregister_menu_item($name, $menu, $menutype = 'site') {
  *
  * @return string
  */
-function ossn_view_menu($menu, $custom = false) {
+function ossn_view_menu($menu, $custom = false) { //$menu= footer
 				global $Ossn;
 				if(!isset($Ossn->menu[$menu])) {
 								return false;
@@ -87,10 +87,10 @@ function ossn_view_menu($menu, $custom = false) {
 				$ossnmenu = new OssnMenu;
 				$ossnmenu->sortMenu($menu);
 				
-				$params['menu'] = $Ossn->menu[$menu];
+				$params['menu'] = $Ossn->menu[$menu]; // 5 arrays a_copyrights, about, site, privacy, powered
 				if($custom == false) {
 								$params['menuname'] = $menu;
-								return ossn_plugin_view("menus/{$menu}", $params);
+								return ossn_plugin_view("menus/{$menu}", $params); //$params=2arrays(menu=> 5 arrays, menuname=> footer) ********retuns?*********
 				} elseif($custom !== false) {
 								$params['menuname'] = $menu;
 								return ossn_plugin_view($custom, $params);
