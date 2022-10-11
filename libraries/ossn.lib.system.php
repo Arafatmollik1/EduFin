@@ -59,6 +59,9 @@ function ossn_recursive_array_search($needle, $haystack) {
  */
 function ossn_site_url($extend = '', $action = false) {
 	global $Ossn;
+	//the following two lines of code is responsible for redirecting to currect host name
+	$host		= parse_url($_SERVER['HTTP_HOST']);
+	$Ossn->url= $host['host']."/ossn/";
 	$siteurl = "{$Ossn->url}{$extend}";
 	if ($action === true) {
 		$siteurl = ossn_add_tokens_to_url($siteurl);

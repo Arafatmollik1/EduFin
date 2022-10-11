@@ -350,12 +350,12 @@ function ossn_languages_js(){
     		|| (!empty($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on" && $parts['scheme'] == 'http')) {
         	$redirect = true;
     	}
-
-	if(($host['host'] !== $parts['host']) || $redirect){
+//very important code- responsible for redirection on invalid host
+/* 	if(($host['host'] !== $parts['host']) || $redirect){
 		header("HTTP/1.1 301 Moved Permanently");
 		$url = "{$parts['scheme']}://{$parts['host']}{$port}{$_SERVER['REQUEST_URI']}";
 		header("Location: {$url}"); 		
-	}
+	} */
  }
 ossn_register_callback('ossn', 'init', 'ossn_languages_js');
 ossn_register_callback('ossn', 'init', 'ossn_javascript');
