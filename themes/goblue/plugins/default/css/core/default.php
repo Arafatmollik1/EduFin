@@ -142,7 +142,10 @@ a {
 	background: url("<?php echo ossn_add_cache_to_url(ossn_theme_url('images/background.jpg'));?>") no-repeat;
 	background-size: cover;
 }
-
+.ossn-layout-startup > .container > .row{
+	height: calc(100vh - 124px);
+	display: table;
+}
 .ossn-layout-startup footer .ossn-footer-menu a {
 	color: #fff;
 }
