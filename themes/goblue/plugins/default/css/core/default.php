@@ -144,7 +144,10 @@ a {
 }
 .ossn-layout-startup > .container > .row{
 	height: calc(100vh - 124px);
+	width: 100%;
 	display: table;
+	margin-right: auto;
+	margin-left: auto;
 }
 .ossn-layout-startup footer .ossn-footer-menu a {
 	color: #fff;
