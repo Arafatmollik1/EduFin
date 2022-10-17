@@ -5,11 +5,12 @@
 	background: #fff;
 	width: 254px;
 	border: 1px solid #ececec;
-	position: fixed;
-	bottom: 1px;
+	position: absolute;
+	//bottom: 1px;
 	right: 1px;
 	z-index: 10000;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+	transform: translate(-57px, -1060px) translate(-100%, -100%);
 }
 
 .emojii-container .nav {}
