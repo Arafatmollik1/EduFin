@@ -53,6 +53,27 @@ Ossn.RegisterStartupFunction(function() {
 		// A. append multi-purpose emoji container to end of document
 		// **********************************************************
 		$('body').append('<div id="master-moji"><input type="hidden" id="master-moji-anchor" value=""><div class="dropdown emojii-container-main"> <div class="emojii-container" data-active="emoticons"> <ul class="nav nav-tabs"></ul> </div> </div> </div>');
+		m_button= document.getElementById('comment-box-23');
+		console.log(m_button);
+		m_button.addEventListener('click',()=>{
+			function getOffset( el ) {
+			var _x = 0;
+			var _y = 0;
+			while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+				_x += el.offsetLeft - el.scrollLeft;
+				_y += el.offsetTop - el.scrollTop;
+				el = el.offsetParent;
+			}
+				return { top: _y, left: _x };
+			}
+			var xPosition = getOffset(document.querySelector("#comment-box-23")).left;
+			var yPosition = getOffset(document.querySelector("#comment-box-23")).top; 
+			console.log('the right side position of the commentbox is: '+ xPosition);
+			console.log('the top side position of the commentbox is: '+ yPosition);
+			let m_root= document.querySelector(':root');
+			m_root.style.setProperty('--xScreenPosition', '-'+xPosition+'px');
+			m_root.style.setProperty('--yScreenPosition', '-'+yPosition+'px');
+		});
 
 		// add emojis to container above
 		$.each(EmojiiArray, function(key, data) {

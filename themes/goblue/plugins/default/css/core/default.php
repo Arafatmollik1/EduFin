@@ -1,7 +1,10 @@
 /******************************
 	Basic
 **********************************/
-
+:root{
+	--yScreenPosition: 0px;
+	--xScreenPosition: 0px;
+}
 body {
 	font-size: 14px;
 	background-color: #eaeaea;
